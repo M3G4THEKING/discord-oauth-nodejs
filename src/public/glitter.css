@@ -1,0 +1,56 @@
+:root {
+    --animation-time: 2s; 
+  }
+  
+  .text {
+    font-family: "Shrikhand", cursive;
+    font-weight: 800;
+    font-size: 8rem;
+    fill: #f8007b;
+    text-anchor: start;
+  }
+  
+  .glitter svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .defs {
+    height: 0px;
+  }
+  
+  .noise {
+    animation: glitter-sparkle 0.25s linear infinite;
+  }
+  
+  @keyframes glitter-sparkle {
+    0% {
+      filter: url("#noiseFilter1");
+    }
+    100% {
+      filter: url("#noiseFilter2");
+    }
+  }
+  
+  .overlay {
+    mix-blend-mode: multiply;
+    fill: white;
+  }
+  
+  .glitter {
+    display: grid;
+    grid-template-rows: repeat(1fr, 6);
+    grid-template-columns: repeat(1fr, 10);
+  }
+  
+  @keyframes flicker {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .star {
+    animation: flicker var(--animation-time) ease alternate infinite;
+  }

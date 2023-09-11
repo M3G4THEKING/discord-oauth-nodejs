@@ -11,7 +11,7 @@ function isAuthorized(req, res, next) {
 function isNotAuthorized(req, res, next) {
   if (req.user) {
     // console.log("User is logged in");
-    res.redirect("/dashboard");
+    res.redirect("/voting");
   } else {
     next();
   }

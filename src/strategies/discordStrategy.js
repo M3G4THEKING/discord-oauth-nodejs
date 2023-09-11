@@ -34,6 +34,7 @@ passport.use(
           discordId: profile.id,
           username: profile.username,
           guilds: profile.guilds,
+          voted: false,
         });
 
         const savedUser = await newUser.save();

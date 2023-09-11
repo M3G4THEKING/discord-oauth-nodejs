@@ -11,6 +11,7 @@ require("./strategies/discordStrategy");
 // Settings
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
+app.use(express.static(__dirname + '/public'));
 
 // Middlewares
 app.use(
@@ -30,7 +31,6 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
-
 // Global variables
 app.use((req, res, next) => {
   app.locals.user = req.user;
@@ -40,6 +40,6 @@ app.use((req, res, next) => {
 // Routes
 app.use("/", require("./routes/index.routes"));
 app.use("/auth", require("./routes/auth.routes"));
-app.use("/dashboard", require("./routes/dashboard.routes"));
+app.use("/voting", require("./routes/voting.routes"));
 
 module.exports = app;

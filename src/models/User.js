@@ -14,6 +14,10 @@ const userSchema = new Schema(
       type: Array,
       required: true,
     },
+    voted: {
+      type: Boolean,
+      required: true,
+    },
   },
   {
     timestamps: true,

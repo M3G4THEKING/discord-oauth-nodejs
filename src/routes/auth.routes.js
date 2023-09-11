@@ -8,7 +8,7 @@ router.get(
   "/redirect",
   passport.authenticate("discord", {
     failureRedirect: "/", //other you could use are /forbiddent,/failure, etc
-    successRedirect: "/dashboard",
+    successRedirect: "/voting",
   })
 );
 

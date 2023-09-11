@@ -1,0 +1,212 @@
+<style>
+    :root {
+    --animation-time: 2s; 
+  }
+  
+  .text {
+    font-family: "Shrikhand", cursive;
+    font-weight: 800;
+    font-size: 5rem;
+    fill: #f8007b;
+    text-anchor: start;
+  }
+  
+  .glitter svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .defs {
+    height: 0px;
+  }
+  
+  .noise {
+    animation: glitter-sparkle 0.25s linear infinite;
+  }
+  
+  @keyframes glitter-sparkle {
+    0% {
+      filter: url("#noiseFilter1");
+    }
+    100% {
+      filter: url("#noiseFilter2");
+    }
+  }
+  
+  .overlay {
+    mix-blend-mode: multiply;
+    fill: white;
+  }
+  
+  .glitter {
+    display: grid;
+    grid-template-rows: repeat(1fr, 6);
+    grid-template-columns: repeat(1fr, 10);
+  }
+  
+  @keyframes flicker {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .star {
+    animation: flicker var(--animation-time) ease alternate infinite;
+  }
+</style>
+<svg class="defs">
+  <defs>
+    <g viewBox="0 0 200 200">
+      <filter id="noiseFilter1">
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="0.6"
+          numOctaves="3"
+          stitchTiles="stitch"
+        />
+        <feColorMatrix type="saturate" values="0" />
+        <feComponentTransfer color-interpolation-filters="sRGB">
+          <feFuncR
+            type="gamma"
+            exponent="1.5"
+            amplitude="1.5"
+            offset="0"
+          ></feFuncR>
+          <feFuncG
+            type="gamma"
+            exponent="1.5"
+            amplitude="1.5"
+            offset="0"
+          ></feFuncG>
+          <feFuncB
+            type="gamma"
+            exponent="1.5"
+            amplitude="1.5"
+            offset="0"
+          ></feFuncB>
+        </feComponentTransfer>
+      </filter>
+    </g>
+    <g viewBox="0 0 200 200">
+      <filter id="noiseFilter2">
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="0.6"
+          numOctaves="3"
+          seed="3"
+          stitchTiles="stitch"
+        />
+        <feColorMatrix type="saturate" values="0" />
+        <feComponentTransfer color-interpolation-filters="sRGB">
+          <feFuncR
+            type="gamma"
+            exponent="1.5"
+            amplitude="1.5"
+            offset="0"
+          ></feFuncR>
+          <feFuncG
+            type="gamma"
+            exponent="1.5"
+            amplitude="1.5"
+            offset="0"
+          ></feFuncG>
+          <feFuncB
+            type="gamma"
+            exponent="1.5"
+            amplitude="1.5"
+            offset="0"
+          ></feFuncB>
+        </feComponentTransfer>
+      </filter>
+    </g>
+    <g
+      id="star-1"
+      viewBox="0 0 3 3"
+      width="6"
+      xmlns="http://www.w3.org/2000/svg"
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      stroke-linejoin="round"
+      stroke-miterlimit="2"
+    >
+      <path fill="#fff" d="M1 0h1v1H1zM0 1h1v1H0zM1 2h1v1H1zM2 1h1v1H2z" />
+    </g>
+    <g
+      id="star-2"
+      viewBox="0 0 7 7"
+      xmlns="http://www.w3.org/2000/svg"
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      stroke-linejoin="round"
+      stroke-miterlimit="2"
+    >
+      <path fill="#fff" d="M3 2h1v3H3z" />
+      <path
+        fill="#fff"
+        d="M5 3v1H2V3zM3 0h1v1H3zM6 3h1v1H6zM0 3h1v1H0zM3 6h1v1H3z"
+      />
+    </g>
+    <g
+      id="star-3"
+      viewBox="0 0 9 9"
+      xmlns="http://www.w3.org/2000/svg"
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      stroke-linejoin="round"
+      stroke-miterlimit="2"
+    >
+      <path fill="#fff" d="M4 2h1v5H4z" />
+      <path fill="#fff" d="M3 3h3.167v3H3z" />
+      <path
+        fill="#fff"
+        d="M7 4v1H2V4zM4 0h1v1H4zM8 4h1v1H8zM0 4h1v1H0zM4 8h1v1H4z"
+      />
+    </g>
+  </defs>
+</svg>
+
+<div class="glitter">
+  <svg>
+    <defs>
+      <clipPath id="text-clip">
+        <text x="0" y="75%" class="text">Votaciones FaMAFIA 2023</text>
+      </clipPath>
+    </defs>
+    <text x="0" y="75%" class="text">Votaciones FaMAFIA 2023</text>
+    <rect
+      class="noise"
+      width="100%"
+      height="100%"
+      clip-path="url(#text-clip)"
+      filter="url(#noiseFilter)"
+    />
+    <rect
+      class="overlay"
+      width="100%"
+      height="100%"
+      clip-path="url(#text-clip)"
+    />
+    <use class="star" xlink:href="#star-1" x="25%" y="50%" />
+    <use class="star" xlink:href="#star-3" x="10%" y="26%" />
+    <use class="star" xlink:href="#star-2" x="5%" y="64%" />
+    <use class="star" xlink:href="#star-2" x="29.5%" y="30%" />
+    <use class="star" xlink:href="#star-1" x="5%" y="23%" />
+    <use class="star" xlink:href="#star-1" x="13%" y="68%" />
+    <use class="star" xlink:href="#star-1" x="15%" y="18%" />
+    <use class="star" xlink:href="#star-2" x="18%" y="61%" />
+    <use class="star" xlink:href="#star-2" x="18%" y="61%" />
+    <use class="star" xlink:href="#star-3" x="21%" y="35%" />
+    <use class="star" xlink:href="#star-1" x="19%" y="47%" />
+    <use class="star" xlink:href="#star-3" x="29%" y="65%" />
+  </svg>
+</div>
+
+<script>
+  document.querySelectorAll(".star").forEach((el) => {
+    el.style.setProperty("--animation-time", Math.random() + "s");
+  });
+</script>
+
+

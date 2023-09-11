@@ -1,0 +1,157 @@
+<style>
+  /* Font from Google fonts */
+
+  @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,900");
+
+  /* Basic styles */
+
+  html,
+  body {
+    height: 100%;
+    font-family: "Source Sans Pro", sans-serif;
+    background-color: #00171f;
+    color: #fafafa;
+  }
+
+  /* Form Styles */
+
+  .form {
+    position: relative;
+    max-width: 610px;
+    margin: 60px auto;
+  }
+
+  .form__header {
+    margin-bottom: 40px;
+    border-bottom: 1px dashed rgba(#fafafa, 0.15);
+  }
+
+  .form__title {
+    font-size: 45px;
+    margin: 10px 0;
+  }
+
+  .form__instruction {
+    font-size: 22px;
+  }
+
+  .form__options {
+    border: none;
+    padding: 0;
+  }
+
+  .form__question {
+    font-size: 25px;
+  }
+
+  .form__answer {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 23%;
+    margin: 20px 1% 20px 0;
+    height: 180px;
+    vertical-align: top;
+    font-size: 22px;
+    text-align: center;
+  }
+
+  label {
+    border: 1px solid rgba(#fafafa, 0.15);
+    box-sizing: border-box;
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 10px 10px 30px 10px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: all 0.5s ease-in-out;
+    &:hover,
+    &:focus,
+    &:active {
+      border: 1px solid rgba(#fafafa, 0.5);
+    }
+  }
+
+  .form__button {
+    height: 40px;
+    border: none;
+    background-color: #00703f;
+    color: #fafafa;
+    text-transform: uppercase;
+    font-family: "Source Sans Pro", sans-serif;
+    padding: 0 20px;
+    border-radius: 20px;
+    font-weight: 900;
+    cursor: pointer;
+    margin: 40px 0;
+    transition: all 0.25s ease-in-out;
+  }
+  .form__button:hover,
+  .form__button:focus {
+    background-color: #00824a;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+    outline: none;
+  }
+
+  /* Input style */
+
+  input[type="radio"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  input[type="radio"]:active ~ label {
+    opacity: 1;
+  }
+
+  input[type="radio"]:checked ~ label {
+    opacity: 1;
+    border: 1px solid;
+  }
+
+  
+</style>
+<div class="form" method="get">
+  <form action="/voting/vote">
+    <fieldset class="form__options">
+      <legend class="form__question">A quien vas a votar??????????</legend>
+      <p class="form__answer">
+        <input type="radio" name="vote" id="du" value="du" checked />
+        <label for="du">
+          Partido Discordia Unida
+          - Benjamin Cañas
+          - Manu la dominga locaaa
+        </label>
+      </p>
+
+      <p class="form__answer">
+        <input type="radio" name="vote" id="puto" value="puto" />
+        <label for="puto">
+          Partido P.U.T.O..
+          - Atila el zundarblaca
+          - Juani <b>El marihuana Pereyra</b> Mancini
+        </label>
+      </p>
+
+      <p class="form__answer">
+        <input type="radio" name="vote" id="ube" value="ube" />
+        <label for="ube">
+          Partido United by the Empire
+          - La matimuuuuuuuuuuuuuuuun
+          - Nach0_
+        </label>
+      </p>
+
+      <p class="form__answer">
+        <input type="radio" name="vote" id="enblancho" value="blanco" />
+        <label for="enblancho">
+          Null0
+        </label>
+      </p>
+    </fieldset>
+    <button class="form__button" type="submit">Voto (Cuenta como declaracion jurada)</button>
+  </form>
+  
+</div>
+</footer>
