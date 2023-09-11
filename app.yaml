@@ -1,0 +1,10 @@
+runtime_config:
+    operating_system: "ubuntu22"
+    runtime_version: "20"
+env_variables:
+    PORT: "3000"
+    MONGODB_URI: "mongodb+srv://granthed:oC3ql3KrUVvQGuwT@cluster0.zdo6vpz.mongodb.net/?retryWrites=true&w=majority"
+    SECRET: "some random secret"
+    DISCORD_CLIENT_ID: "1150310062124961843"
+    DISCORD_CLIENT_SECRET: "27TjuN6vNyHgcaFO6V9boZrMOl9oG5pj"
+runtime: nodejs18
