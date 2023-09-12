@@ -7,51 +7,51 @@
     rel="stylesheet"
   />
   <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+  <style>
+    body {
+      animation: epilepsia 10ms step-start infinite;
+      animation-delay: 60s;
+    }
+    .bg-dark {
+      position: relative;
+    }
+    .homer {
+      position: absolute;
+      right: 100;
+      top: 300;
+    }
+  
+    @keyframes epilepsia {
+      50% {
+        background-color: #000;
+      }
+      100% {
+        background-color: #fff;
+      }
+    }
+  
+    .homer {
+      position: absolute;
+      right: 100;
+      top: 300;
+    }
+    .doc {
+      position: absolute;
+      right: 300;
+      top: 100;
+    }
+    .mahadma {
+      position: absolute;
+      left: 70;
+      bottom: 100;
+    }
+    .over {
+      position: absolute;
+      right: 50;
+      bottom: 100;
+    }
+  </style>
 </head>
-<style>
-  body {
-    animation: epilepsia 10ms step-start infinite;
-    animation-delay: 50s;
-  }
-  .bg-dark {
-    position: relative;
-  }
-  .homer {
-    position: absolute;
-    right: 100;
-    top: 300;
-  }
-
-  @keyframes epilepsia {
-    50% {
-      background-color: #000;
-    }
-    100% {
-      background-color: #fff;
-    }
-  }
-
-  .homer {
-    position: absolute;
-    right: 100;
-    top: 300;
-  }
-  .doc {
-    position: absolute;
-    right: 300;
-    top: 100;
-  }
-  .mahadma {
-    position: absolute;
-    left: 100;
-    bottom: 100;
-  }
-  .over {
-    position: absolute;
-    right: 50;
-    bottom: 100;
-  }
-</style>
 
 <main class="bg-dark">
   <div class="container text-light">
